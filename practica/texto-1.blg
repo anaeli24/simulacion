@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: texto-1.aux
+Reallocating 'name_of_file' (item size: 1) to 8 items.
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: plainnat.bst
+Database file #1: ejemplo.bib
+Warning--empty year in libro
+Warning--empty year in libro
+You've used 2 entries,
+            2773 wiz_defined-function locations,
+            602 strings with 4917 characters,
+and the built_in function-call counts, 638 in all, are:
+= -- 48
+> -- 20
+< -- 2
++ -- 8
+- -- 6
+* -- 41
+:= -- 107
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 7
+chr.to.int$ -- 2
+cite$ -- 6
+duplicate$ -- 39
+empty$ -- 64
+format.name$ -- 8
+if$ -- 125
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 3
+newline$ -- 18
+num.names$ -- 8
+pop$ -- 23
+preamble$ -- 1
+purify$ -- 6
+quote$ -- 0
+skip$ -- 23
+stack$ -- 0
+substring$ -- 4
+swap$ -- 3
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 17
+warning$ -- 2
+while$ -- 6
+width$ -- 0
+write$ -- 31
+(There were 2 warnings)
