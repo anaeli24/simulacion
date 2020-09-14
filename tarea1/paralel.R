@@ -1,43 +1,45 @@
-repetir <- 50
-duracion <- 200
-pasos <- sapply(5:10, function(x) {2**x})
- 
-eucl <-  true
-library(parallel)
- 
-datos <-  data.frame()
- 
-experimento <- function(replica) {
-    pos <- rep(0, dimension)
-    mayor <- 0
-    for (t in 1:duracion) {
-        cambiar <- sample(1:dimension, 1)
-        cambio <- 1
+registro = data.frame()
+dimension = 8
+potencia = 10
+for (pot in 5:potencia){
+  duracion <- 2^potencia
+  for (dim in 1:dimension) {
+    
+    datos = numeric()
+    repeticiones = 50
+    for (replica in 1:repeticiones) {
+      resultado = FALSE
+      pos <- rep(0, dim)
+      for (t in 1:duracion) {
+        modificar = sample(1:dim, 1)
         if (runif(1) < 0.5) {
-            cambio <- -1
+          pos[modificar] =  pos[modificar] + 1
+        } else {
+          pos[modificar] =  pos[modificar] - 1
         }
-        pos[cambiar] <- pos[cambiar] + cambio
-        if (eucl) {
-            d <- sqrt(sum(pos**2))
-        } else { # Manhattan
-            d <- sum(abs(pos))
+        if (all(pos == 0)) {
+          resultado = TRUE
+          break
         }
-        if (d > mayor) {
-            mayor <- d
-        }
-    }
-    return(mayor)
+      }
+      datos = c(datos, resultado)
 }
- 
-cluster <- makeCluster(detectCores() - 1)
-clusterExport(cluster, "duracion")
-clusterExport(cluster, "eucl")
-clusterExport(cluster, "experimento")
- 
-for (dimension in 1:8) {
-    clusterExport(cluster, "dimension")
-    resultado <- parSapply(cluster, 1:repetir, experimento)
-    datos <- rbind(datos, resultado)
+  porc = 100 * sum(datos) / repeticiones
+  registro = rbind(registro, c(pot, porc, dim))
+  }
 }
-stopCluster(cluster)
-print(resultado)           })
+names(registro) = c("pot", "porc", "dim")
+sink('registro.txt')
+print(registro)
+sink()
+png("pr1sim.png", width=800, height=800, units='px')
+par(cex.lab=2) 
+par(cex.axis=2) 
+boxplot(porc ~ dim, 
+data =  registro,
+xlab="Dimensi\u{F3}n",
+ylab="Porcentaje de regreso al punto de origen",
+col=rainbow(8, alpha=0.2),
+border = rainbow(8, v=0.6)
+)
+

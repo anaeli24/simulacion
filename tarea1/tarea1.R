@@ -84,6 +84,7 @@ for (pot in 5:potencia){
 names(registro) = c("pot", "porc", "dim")
 sink('registro.txt')
 print(registro)
+
 sink()
 png("pr1sim.png", width=800, height=800, units='px')
 par(cex.lab=2) 
