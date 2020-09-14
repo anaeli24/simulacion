@@ -8,8 +8,8 @@ paso = function(pos,dim){
      return(pos);
 }
 
-dim=3
-largo=12
+dim=8
+largo=50
 pos=rep(0,dim)
 for(t in 1:largo) {
    pos=paso(pos,dim)
