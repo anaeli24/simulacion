@@ -1,4 +1,5 @@
 \documentclass{article}
+
 \usepackage[spanish]{babel}
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage[T1]{fontenc}
@@ -16,32 +17,35 @@
 
 \section{Introducci\'on}\label{intro}
 
-El movimiento browniano es un movimiento que ocurre de manera aleatoria observable en particulas microscopicas que se encuentran en un medio fluido, como es el polen en una gota de agua. tal movimiento recibe su nombre en honor al biologo botanico Robert Brown, quien en 1827 observo como es que las particulas de polen se despazablan de manera aleatoria sin alguna razon. El movimiento aleatorio de estas part\'iculas se debe a que su superficie es bombardeada incesantemente por las mol\'eculas, es decir, los \'atomos del fluido sometidas a una agitaci\'on t\'ermica. \citet{baz}
-A pesar de que fue Robert Brown el primero el observar este fenomeno, el primero en explicarlo fue Einstein en 1905.
-cuando se realiza una simulacion del movimiento browniano este se representa en movimientos tratandose de una caminata, en donde la particula parte desde un origen y esta da "pasos" discretos (tiempo) de forma aleatoria, realizandose desde una dimension hasta las que podamos imaginar tratandose de un modelo matematico. \citep{Eli}. con estos estudios es posible predecir las tendencias del comportamiento de las particulas de acuerdo a las diferentes variables que sean tomadas en cuenta.
+El movimiento browniano es un movimiento que ocurre de manera aleatoria observable en part\'iculas microsc\'opicas que se encuentran en un medio fluido, como es el polen en una gota de agua. Tal movimiento recibe su nombre en honor al biol\'ogo bot\'anico Robert Brown, quien en 1827 observo como es que las part\'iculas de polen se despazaban de manera aleatoria sin alguna raz\'on. El movimiento aleatorio de estas part\'iculas se debe a que su superficie es bombardeada incesantemente por las mol\'eculas, es decir, los \'atomos del fluido sometidas a una agitaci\'on t\'ermica. \citet{baz}
+A pesar de que fue Robert Brown el primero el observar este fen\'omeno, el primero en explicarlo fue Einstein en 1905.
+Cuando se realiza una simulaci\'on del movimiento browniano este se representa en movimientos trat\'andose de una caminata, en donde la part\'icula parte desde un origen y esta da "pasos" discretos (tiempo) de forma aleatoria, realizado desde una dimensi\'on hasta las que podamos imaginar trat\'andose de un modelo matem\'atico. \citep{Eli}. Con estos estudios es posible predecir las tendencias del comportamiento de las part\'iculas de acuerdo con las diferentes variables que sean tomadas en cuenta.
 
-/section{objetivo}\label{objec}
+\section{Objetivo}\label{objec}
 
-observar  los efectos de la dimensi\'on en el tiempo de regreso al origen del movimiento Browniano para dimensiones 1 a 8 en incrementos lineales de uno, variando el n\'umero de pasos de la caminata como potencias de dos con exponente de 5 a 10 en incrementos lineales de uno, con 50 repeticiones del experimento para cada combinaci\'on
+Observar  los efectos de la dimensi\'on en el tiempo de regreso al origen del movimiento Browniano para dimensiones 1 a 8 en incrementos lineales de uno, variando el n\'umero de pasos de la caminata como potencias de dos con exponente de 5 a 10 en incrementos lineales de uno, con 50 repeticiones del experimento para cada combinaci\'on
 
-
+\newpage
 \section{Metodolog\'ia}\label{met}
 
-Se utiilizo el paquete estadistico R en la vercion 4.0.2 para estudiar los efectos de la dimensi\'on en el tiempo de regreso al origen del movimiento Browniano.
-La practica consistio en simular una caminata variando las dimensiones entre 1 y 8 y tambi\'en los pasos de la misma como potencias de dos con exponente de 5 a 10 en incrementos lineales de uno.  Se realizaron 50 repeticiones para cada caso, con estos datos se
-calcul\'o la probabilidad de regreso para cada una de las 8 dimensiones, as\'i mismo, se observ\'o el efecto de la dimension en el tiempo de regreso del origen de la caminata sobre el comportamiento de la particula.
+Se utilizo el paquete estad\'istico R en la vercion 4.0.2 para estudiar los efectos de la dimensi\'on en el tiempo de regreso al origen del movimiento Browniano.
+La pr\'actica consisti\'o en simular una caminata variando las dimensiones entre 1 y 8 y tambi\'en los pasos de la misma como potencias de dos con exponente de 5 a 10 en incrementos lineales de uno.  Se realizaron 50 repeticiones para cada caso, con estos datos se
+calcul\'o la probabilidad de regreso para cada una de las 8 dimensiones, as\'i mismo, se observ\'o el efecto de la dimensi\'on en el tiempo de regreso del origen de la caminata sobre el comportamiento de la part\'icula.
 
-los resultados obtenidos fueron graficados por medio de diagrama de caja y bigotes, en el cual se observa el efecto de la dimesion en el tiempo de regreso al origen de la particula en la cual se representa tal movimiento.
+Los resultados obtenidos fueron graficados por medio de diagrama de caja y bigotes, en el cual se observa el efecto de la dimesi\'on en el tiempo de regreso al origen de la part\'icula en la cual se representa tal movimiento.
 
 \section{Resultados y Discusi\'on}\label{res}
 
-Una vez ejecutada la simulacion por medio de R, se obtuvieron una matriz de datos correspondientes a los porcentajes de regreso al punto de origen para cada dimension asi como cada duracion de la caminata. En la tabla \ref{t1} se muestra el conjunto de datos con el cual se realizo el analisis de la presente.
+Una vez ejecutada la simulacion por medio de R, se obtuvieron una matriz de datos correspondientes a los porcentajes de regreso al punto de origen para cada dimensi\'on, as\'i como cada duraci\'on de la caminata. En el cuadro \ref{t1} se muestra el conjunto de datos con el cual se realiz\'o el an\'alisis de la presente.
+Una vez obtenida la matriz de datos se construy\'o el diagrama de caja/bigote, (Figura \ref{f1} ), para observar c\'omo es que se comporta una part\'icula con movimiento browniano), en donde cada caja corresponde a una dimensi\'on donde se ven agrupados los porcentajes de regreso al punto de origen en los diferentes tiempos de la caminata.
+As\'i como en la Figura \ref{f2}, se observa la distancia m\'axima que recorri\'o la part\'icula en cada dimensi\'on.
 
 \begin{table} 
-\caption{una parte de los datos obtenidos por medio de R ; la salida completa se encuentra en el repositorio de la tarea1}
-\label{t1}
-\begin{center}
-\begin{tabular}{rrr}
+ \caption{Datos obtenidos por R.}
+  \cite{tarea1},
+ \label{t1}
+ \begin{center}
+ \begin{tabular}{rrr}
 \texttt{pot} & \texttt{porc} & \texttt{dim} \\
 5  &  96  &  1 \\
 5  &  80  &  2 \\
@@ -63,22 +67,29 @@ $\vdots$ &   $\vdots$ &   $\vdots$ \\
 \end{center}
 \end{table}
 
-Una vez obtenida la matriz de datos se construyo el diagrama de caja/bigote para observar como es que se comporta una particula con movimiento browniano (figura \ref{fig:pr1sim.png}) en donde cada caja corresponde a una dimension donde se ven agrupados los porcentajes de regreso al punto de origen en los diferentes tiempos de la caminata.
 
 \begin{figure}
   \begin{center}
-    \includegraphics[width=10cm]{pr1sim.png}
-  \end{center}
-  \caption{porcentaje de regreso por dimensi\'on.}
-  \label{fig:pr1sim.png}
+\includegraphics[scale=0.3]{pr1sim.png}
+\end{center}
+  \caption{Probabilidad de regreso por dimensi\'on.}
+  \label{f1}
+  \cite{tarea1}
+
+\includegraphics[scale=0.5]{p1mr.png}
+ \caption{Distancia maxima.}
+  \label{f2}
+  \cite{tarea1}
 \end{figure}
 
-\section{conclusiones}\label{con}
+\newpage
+\section{Conclusiones}\label{con}
 
-Estubo interesante  en la seccion
+El movimiento de una part\'icula se realiza de manera aleatoria, es posible observar tal movimiento mediante modelos matem\'aticos variando tanto, el largo de la caminata(tiempo), como la dimensi\'on en la que se encuentre, ya que este es posible observar en un modelo matem\'atico, en todas las dimensiones que se puedan ocurrir y esta siempre vuelve a su punto de origen, pero conforme vamos teniendo m\'as dimensiones es m\'as dif\'icil regresar a su origen.
 
+\bibliography{biblio}
 \bibliographystyle{plainnat}
-\bibliography{simu.bib}
+
 \end{document}
 
 
