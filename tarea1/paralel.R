@@ -27,19 +27,16 @@ for (pot in 5:potencia){
   porc = 100 * sum(datos) / repeticiones
   registro = rbind(registro, c(pot, porc, dim))
   }
+}stopCluster(cluster)
+if (eucl) {
+    png("p1er.png")
+    boxplot(data.matrix(datos), use.cols=FALSE, 
+       xlab="Dimensi\u{F3}n", ylab="Distancia m\u{E1}xima", 
+       main="Euclideana")
+} else {
+    png("p1mr.png")
+    boxplot(data.matrix(datos), use.cols=FALSE, 
+       xlab="Dimensi\u{F3}n", ylab="Distancia m\u{E1}xima", 
+       main="Manhattan")
 }
-names(registro) = c("pot", "porc", "dim")
-sink('registro.txt')
-print(registro)
-sink()
-png("pr1sim.png", width=800, height=800, units='px')
-par(cex.lab=2) 
-par(cex.axis=2) 
-boxplot(porc ~ dim, 
-data =  registro,
-xlab="Dimensi\u{F3}n",
-ylab="Porcentaje de regreso al punto de origen",
-col=rainbow(8, alpha=0.2),
-border = rainbow(8, v=0.6)
-)
-
+graphics.off()
