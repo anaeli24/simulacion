@@ -3,7 +3,7 @@ dimension = 8
 potencia = 10
 largo=c(100,200,400,800)
 for (pot in 5:potencia){
-  duracion <- 2^potencia
+  lsrgo <- 2^potencia
   for (dim in 1:dimension) {
     
     datos = numeric()
@@ -43,3 +43,4 @@ ylab="tiempo de regreso",
 col=rainbow(8, alpha=0.2),
 border = rainbow(8, v=0.6)
 )
+dev.off()

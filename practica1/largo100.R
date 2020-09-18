@@ -1,11 +1,11 @@
 registro = data.frame()
-dimension <- 8
-potencia <- 10
-largo <- 100
+dimension = 8
+potencia = 10
+largo=100
 for (pot in 5:potencia){
-  largo <- 2^potencia
+  largo = 2^potencia
   for (dim in 1:dimension) {
-    
+
    datos = numeric()
     repeticiones = 50
     for (replica in 1:repeticiones) {
