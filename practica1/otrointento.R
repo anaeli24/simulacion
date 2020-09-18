@@ -1,6 +1,7 @@
 registro = data.frame()
 dimension = 8
 potencia = 10
+largo=c(100,200,400,800)
 for (pot in 5:potencia){
   duracion <- 2^potencia
   for (dim in 1:dimension) {
@@ -10,7 +11,7 @@ for (pot in 5:potencia){
     for (replica in 1:repeticiones) {
       resultado = FALSE
       pos <- rep(0, dim)
-      for (t in 1:duracion) {
+      for (t in 1:largo) {
         modificar = sample(1:dim, 1)
         if (runif(1) < 0.5) {
           pos[modificar] =  pos[modificar] + 1
@@ -27,16 +28,18 @@ for (pot in 5:potencia){
   porc = 100 * sum(datos) / repeticiones
   registro = rbind(registro, c(pot, porc, dim))
   }
-}stopCluster(cluster)
-if (eucl) {
-    png("p1er.png")
-    boxplot(data.matrix(datos), use.cols=FALSE, 
-       xlab="Dimensi\u{F3}n", ylab="Distancia m\u{E1}xima", 
-       main="Euclideana")
-} else {
-    png("p1mr.png")
-    boxplot(data.matrix(datos), use.cols=FALSE, 
-       xlab="Dimensi\u{F3}n", ylab="Distancia m\u{E1}xima", 
-       main="Manhattan")
 }
-graphics.off()
+names(registro) = c("pot", "porc", "dim")
+sink('registro.txt')
+print(registro)
+sink()
+png("100.png", width=800, height=800, units='px')
+par(cex.lab=2) 
+par(cex.axis=2) 
+boxplot(porc ~ dim, 
+data =  registro,
+xlab="Dimensi\u{F3}n",
+ylab="tiempo de regreso",
+col=rainbow(8, alpha=0.2),
+border = rainbow(8, v=0.6)
+)
