@@ -1,12 +1,13 @@
+#Shaffer.E Conversacion en Discord, #Solis.D conversacion por Discord, #Quiñonez.O conversacion por Discord.
 buenos = data.frame()
 malos = data.frame()
 for (e in 5:10) {
 l = 2**e
-for (d in 1:8) { 
-for (r in 1:50) {
+for (d in 1:8) {       #para 8 dimensiones
+for (r in 1:50) {      #repeticiones 
 pos = rep(0, d)
 regresa = FALSE
-for (t in 1:l) { 
+for (t in 1:l) {                #para el tiempo
 dd = sample(1:d, 1)
 if (runif(1) < 0.5 ) {
 pos [dd] = pos [dd] + 1 
@@ -31,7 +32,7 @@ dim(buenos)
 dim(malos)
 
 names(buenos) = c("largo", "dim", "tiempo")
-sink('buenos.txt')
+sink('buenos.txt')                            #Tellez.C Repositorio practica 1
 print(buenos)
 png('demo.png')
 boxplot(formula = tiempo ~ dim, data =  buenos,
