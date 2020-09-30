@@ -23,7 +23,7 @@ Se tomo en cuenta las indicaciones dadas en la p\'{a}gina de la clase \cite{elis
 \section{Resultados y Discusi\'{o}n}\label{res}
 
 Una vez modificado el c\'odigo y mediante un an\'alisis se pueden observar ambas opciones.
-a) Para el mayor colapso poblacional, se modific\'o el c\'odigo de tal manera que dijera en cada iteraccion cuantos vivos se obtuvieron. \cite{ana} el extracto de datos se puede observar en el archivo "vivosxiteracion" que se encuentra en el repositorio.
+a) Para el mayor colapso poblacional, se modific\'o el c\'odigo de tal manera que dijera en cada iteraci\'on cuantos vivos se obtuvieron. \cite{ana} el extracto de datos se puede observar en el archivo "vivosxiteraci\'on" que se encuentra en el repositorio.
 
 \begin{table}
   \caption{Vivos por iteraci\'on}
@@ -47,7 +47,7 @@ a) Para el mayor colapso poblacional, se modific\'o el c\'odigo de tal manera qu
 \end{center}
 \end{table}
   
-En la tabla \ref{t1} se muestra el total de vivos por cada iteracion, se observa que a partir de la iteracion 9 se mantiene estable y son 4 vivos continuos hasta obtener las 50 repeticiones, por lo tanto, seg\'un se observa en la tabla \ref{t1} el mayor colapso poblacional fue de 30 celdas que ocurri\'o al pasar del tiempo 0 al tiempo 1.
+En la tabla \ref{t1} se muestra el total de vivos por cada iteraci\'on, se observa que a partir de la iteraci\'on 9 se mantiene estable y son 4 vivos continuos hasta obtener las 50 repeticiones, por lo tanto, seg\'un se observa en la tabla \ref{t1} el mayor colapso poblacional fue de 30 celdas que ocurri\'o al pasar del tiempo 0 al tiempo 1.
 
 Por otra parte, para obtener el mayor tiempo de vida igual se realiz\'o una modificaci\'on para mapear las posiciones de los vivos, mandarlos a un text y de ah\'i una gr\'afica donde se observan en que posiciones se encuentran los que m\'as se repitieron.
 
@@ -59,7 +59,7 @@ Por otra parte, para obtener el mayor tiempo de vida igual se realiz\'o una modi
   \label{f1}
 \end{figure}
 
-Mapeando los lugares donde se observa m\'as negro se muestran las celdas que m\'as tiempo de vida tuvieron, y para confirmar cuantas itertaciones duraron se observ\'o con una b\'usqueda a partir del documento de tex \cite{ana} titulado "mapeovivos" que tambien se encuentra en el repositorio.
+Mapeando los lugares donde se observa m\'as negro se muestran las celdas que m\'as tiempo de vida tuvieron, y para confirmar cuantas itertaci\'ones duraron se observ\'o con una b\'usqueda a partir del documento de tex \cite{ana} titulado "mapeovivos" que tambien se encuentra en el repositorio.
 
 \begin{table}
   \caption{Mapeo de vivos.}
@@ -78,15 +78,24 @@ Para observar c\'omo se llevaron a cabo las iteraciones se muestra la imagen \ci
 
 \section{Reto1}\label{ret}
 
-Para el reto 1 se modific\'o el c\'odigo para simular el crecimiento de grano grueso y obtener la figura en 2D basado en el art\'iculo \cite{ret1} en donde se tom\'o como inspiraci\'on la ecuaci\'on diferencial para modificar la regla del aut\'omata celular. cabe mencionar que en el gif obtenido \cite{ana1} para que se pueda observar una diferencia significativa ser\'ia mejor probarlo con un mayor n\'umero de repeticiones, por motivos del procesador en la computadora no se pudo correr m\'as veces.
+Para el reto 1 se modific\'o el c\'odigo para simular el crecimiento de grano grueso y obtener la figura en 2D basado en el art\'iculo \cite{ret1} en donde se tom\'o como inspiraci\'on la ecuaci\'on diferencial que se muestra en la figura \ref{f2} para modificar la regla del aut\'omata celular. cabe mencionar que en el gif obtenido \cite{ana1} para que se pueda observar una diferencia significativa ser\'ia mejor probarlo con un mayor n\'umero de repeticiones, por motivos del procesador en la computadora no se pudo correr m\'as veces.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=15cm]{ecuaciones.png}
+  \end{center}
+  \caption{Despeje de ecuacion diferencial.}
+  \label{f2}
+\end{figure}
+
 
 \section{Reto2}\label{reto}
 
-para el reto 2 de igual manera se modific\'o el c\'odigo para obtener una figura en 3D, modificando la regla del aut\'omata en este caso no se corrio el c\'odigo ya que ser\'ia pesado para la computadora con la cual se trabaj\'o.
+Para el reto 2 de igual manera se intento modificar el c\'odigo para obtener una figura en 3D, modificando la regla del aut\'omata.
 
   \section{Conclusi\'{o}n}\label{con}
  Al cambiar la probabilidad inicial de una celda viva conforme al n\'umero de repeticiones, dif\'icilmente puede aumentar el n\'umero de celdas vivas.
-El mayor colapso se da en la primera iteracion, y en este caso el mayor tiempo continuo es m\'as f\'acil observar cuando se cumplen las 50 repeticiones.
+El mayor colapso se da en la primera iteraci\'on, y en este caso el mayor tiempo continuo es m\'as f\'acil observar cuando se cumplen las 50 repeticiones.
 
   \bibliography{refes}
   \bibliographystyle{plainnat}
