@@ -1,12 +1,6 @@
-library(parallel)
-library(ggplot2)
-library(gridExtra)
-library(grid)
-library(lattice)
-
 suppressMessages(library(doParallel))
 registerDoParallel(makeCluster(detectCores()-1))
-
+#Rutina pi
 calculo <- function(generar) {
   r <- 1 #Radio
   contcirc <- 0 #Contador dentro del circulo
