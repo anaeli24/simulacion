@@ -126,6 +126,40 @@ En la tabla \ref{t2} se observa el an\'alisis estad\'istico realizado en donde p
 \section{Conclusi\'{o}n}\label{con}
 Al aumentar  la probabilidad de vacunaci\'on disminuye el porcentaje del n\'umero m\'aximo de infectados en una simulaci\'on de sistema multiagente.
 
+\section{Reto 1}\label{ret}
+
+Para el primer reto se cabio el patr\'on de movimiento a que no tenga una trayectoria fija, donde cada agente tiene una posici\'on meta $(x,y)$ hacia la cual se mueven con una velocidad $v$ al alcanzar (o superar) su meta, elige al azar una nueva meta uniformemente al azar. La velocidad de cada agente es una constante, normalmente distribuido sobre la poblaci\'on de agentes. 
+Para esto, se mantienen las variaciones en la probabilidad de generar vacunados y el n\'umero de replicas.
+Se declararon los puntos iniciales en los que aparecen los agentes y sus puntos meta, a su vez se genera un numero aleatorio de pasos con el que se calcula la velocidad con la que avanza el punto meta cada agente.
+
+\begin{lstlisting}[language=R]
+pasos <- sample(5:50,1) #Numero de pasos por recorrer
+      xc <- runif(1,0,l) #Punto inicial en X
+      yc <- runif(1,0,l) #Punto inicial en Y
+      px = runif(1,0,l) #Punto meta en X
+      py = runif(1,0,l) #Punto meta en Y
+ \end{lstlisting}
+
+Esto se genera dentro de un rango cero a el tama\~no del \'area en el que se mueven los agentes. para que la velocidad con la que llega al punto meta concuerde con la distancia en pasos que se recorre se realiza la siguiente operaci\'on.
+
+\begin{lstlisting}[language=R]
+vx = ((px - xc)/pasos) #Velocidad a la meta en X
+      vy = ((py - yc)/pasos) #Velocidad a la meta en Y
+\end{lstlisting}
+
+De igual manera el resto del c\'odigo se modific\'o de tal manera de poder calcular el objetivo en el reto 1, as\'i mismo se guardaron los datos y graficaron en un diagrama de caja-bigote para su an\'alisis.
+
+\begin{figure}[H]
+       \begin{center}
+           \includegraphics[width=13cm]{BuenaR1.png}
+\end{center}
+\caption{Cambio en el porcentaje m\'aximo de infectados con respecto  a la probabilidad de generar agentes vacunados en un modelo de punto intermedio aleatorio}
+        \label{f3}
+\end{figure}
+
+Analizando la figura \ref{f3} se concluye en el reto uno, que la variedad que el modelo de punto intermedio aleatorio aporta al sistema multiagente es notoria. A diferencia del sistema con trayectorias fijas, en este los agentes alcanzan m\'as sitios del \'area a su vez que se cruzan con m\'as agentes y esto aumenta la probabilidad de que los agentes en estado infectado propaguen. Con este nuevo patr\'on de movimiento el porcentaje de infectados ha aumentado en cada una de sus variaciones de probabilidades, a excepci\'on del caso aislado de probabilidad uno.
+
+
   \bibliography{P6}
   \bibliographystyle{plainnat}
 \end{document}
