@@ -1,0 +1,151 @@
+\documentclass{article}
+
+\usepackage[spanish]{babel}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[T1]{fontenc}
+\usepackage[ansinew]{inputenc}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage[numbers,sort&compress]{natbib}
+
+\begin{document}
+\title{\textbf{B\'usqueda local}}
+\author{Anahi Elizabeth Llano}
+
+\maketitle
+
+\section{Objetivo}\label{obj}
+
+La pr\'actica consiste en una b\'usqueda local \cite{elisa} en la cual utiliza el m\'etodo heur\'istico, el cual le permite encontrar la mejor soluci\'on de todas las rutas de resultados posibles, a trav\'es de descubrir la posici\'on exacta del agente que le deja obtenerla en un tiempo corto.
+En el cual el objetivo fue modificar el c\'odigo presentado en clase, buscando maximizar alg\'un variante de la funci\'on bidimensional del ejemplo g(x,y) cumpliendo con las indicaciones dadas en clase, de tal manera que al final se realice una visualizaci\'on animada de como proceden 15 r\'eplicas simultaneas de la b\'usqueda encima de una gr\'afica de proyecci\'on plana.
+
+\section{Metodolog\'{i}a}\label{met}
+
+Para realizar la b\'usqueda del m\'aximo local de la funci\'on y obtener las respectivas im\'agenes se us\'o R en su versi\'on 4.0.3.
+En la rutina se tuvieron en cuenta las restricciones \textit{-3 < x, y < 3} y se usaron movimientos aleatorios en los ejes \textit{x} y \textit{y} tomando ocho posiciones de vecino de las cuales se selecciona la que logra el mayor valor para la funci\'on.  Se realizaron quince b\'usquedas simult\'aneas en pasos de 1.5 con un total de cien pasos.
+
+La animaci\'on se realiz\'o compilando las cien im\'agenes obtenidas en la b\'usqueda local a trav\'es de un servicio web \citep{inter}.
+
+\section{Resultados y Discusi\'{o}n}\label{res}
+
+Primeramente, se buscaba realizar un cambio al codigo \citep{elisa} mostrado de tal manera que maximice la funci\'on bidimensional. Esta funcion la podemos observar en la figura \ref{f1} donde se muestra la funci\'on original as\'i mismo utilizando esta misma funci\'on podemos observar en la figura \ref{f2} los pasos 1, 47 y 80 de las quince b\'usquedas locales simult\'aneas realizadas.  Se observa como a medida que van aumentando los pasos, los puntos (resultado de la funci\'on) tienden a dirigirse hacia su posici\'on m\'axima. 
+
+\begin{figure}[H]
+       \begin{center}
+           \includegraphics[width=13cm]{p7_2d.png}
+       \end{center}
+\caption{Funci\'on original}
+        \label{f1}
+\end{figure}
+
+\begin{figure}[H]
+       \centering
+       \begin{subfigure}[b]{0.47\linewidth}
+           \includegraphics[width=\linewidth]{Pr7sim_1001.png}
+           \caption{Paso 1}
+           \label{f2.a}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.47\linewidth}
+            \includegraphics[width=\linewidth]{Pr7sim_1047.png}
+            \caption{Paso 47}	
+            \label{f2.b}
+        \end{subfigure}
+\begin{subfigure}[b]{0.47\linewidth}
+            \includegraphics[width=\linewidth]{Pr7sim_1080.png}
+            \caption{Paso 80}
+            \label{f2.b}
+        \end{subfigure}
+\caption{B\'usqueda local funci\'on original}
+        \label{f2}
+\end{figure}
+
+Por otra parte tambi\'en se buscaba modificar la funci\'on original \citep{elisaclass}, de tal manera de romper un poco con la simetr\'ia, e intentar trabajar sobre la modificaci\'on, en la figura \ref{f3} se observa c\'omo fue la funci\'on modificada, as\'i mismo en la figura \ref{f4} se observan los pasos 1, 47 y 80 de las quince b\'usquedas locales simultaneas realizadas, con la funci\'on modificada. De igual manera se observa como a medida que aumentan los pasos, los puntos tienden a dirigirse hacia su posici\'on m\'axima.
+
+  \begin{figure}[H]
+       \begin{center}
+           \includegraphics[width=13cm]{fm1.png}
+       \end{center}
+\caption{Funci\'on Modificada 1}
+        \label{f3}
+\end{figure}
+
+\begin{figure}[H]
+       \centering
+       \begin{subfigure}[b]{0.47\linewidth}
+           \includegraphics[width=\linewidth]{fm1.1.png}
+           \caption{Paso 1}
+           \label{f3.a}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.47\linewidth}
+            \includegraphics[width=\linewidth]{fm2.2.png}
+            \caption{Paso 47}	
+            \label{f3.b}
+        \end{subfigure}
+\begin{subfigure}[b]{0.47\linewidth}
+            \includegraphics[width=\linewidth]{fm3.3.png}
+            \caption{Paso 80}
+            \label{f3.b}
+        \end{subfigure}
+\caption{B\'usqueda Local modificacion 1}
+        \label{f4}
+\end{figure}
+
+De igual manera en la figura \ref{f5} se observa otra variante en la funci\'on original, y en la figura \ref{f6} los pasos 1, 47 y 80 de esa misma variante.
+
+ \begin{figure}[H]
+       \begin{center}
+\includegraphics[width=13cm]{fm2.1.png}
+  \end{center}
+\caption{Funci\'on Modificada 2} 
+\label{f5}
+\end{figure}
+
+\begin{figure}[H]
+       \centering
+       \begin{subfigure}[b]{0.47\linewidth}
+           \includegraphics[width=\linewidth]{fm2.1.1.png}
+           \caption{Paso 1}
+           \label{f3.a}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.47\linewidth}
+            \includegraphics[width=\linewidth]{fm2.3.1.png}
+            \caption{Paso 47}	
+            \label{f3.b}
+        \end{subfigure}
+\begin{subfigure}[b]{0.47\linewidth}
+            \includegraphics[width=\linewidth]{fm2.4.1.png}
+            \caption{Paso 80}
+            \label{f3.b}
+        \end{subfigure}
+\caption{B\'usqueda Local modificacion 2}
+        \label{f6}
+\end{figure}
+
+La animaci\'on obtenida  se subi\'o en el repositorio \citep{ana} para cada caso como G0 para la funci\'on original GM1 para la modificaci\'on 1 y GM2 para la modificaci\'on 2. En ellas se puede ver el comportamiento de las quince r\'eplicas realizadas en la b\'usqueda.  Cada uno de los puntos se va acercando al centro, es decir, al m\'aximo de la funci\'on, al aumentar los pasos hasta que todos los puntos se aglomeran en el mismo sitio.
+
+\section{Conclusi\'{o}n}\label{con}
+
+El m\'etodo de la b\'usqueda local logra optimizar una funci\'on. Al aumentar la cantidad de pasos aumenta la precisi\'on, en el caso espec\'ifico de la pr\'actica hacia el valor m\'aximo de la funci\'on. Al variar la funci\'on original de igual manera logra observarse que a medida que aumentan los pasos, los puntos tienden a dirigirse hacia su posici\'on m\'axima. en algunos casos tarda m\'as que en otros
+
+\section{Reto 1}\label{ret}
+
+El primer reto \citep{elisa} es cambiar la regla del movimiento de una soluci\'on x a la de recocido simulado, el cual es una forma de emular el comportamiento de c\'omo es que se enfr\'ia metal, como un movimiento t\'ermico es decir si tenemos una temperatura y comienza con un valor alto y cada vez que vamos a una soluci\'on peor, esta se enfr\'ia un poco, tomando en cuenta los diferentes par\'ametros.
+
+ \begin{figure}[H]
+       \begin{center}
+\includegraphics[width=9cm]{r1.png}
+  \end{center}
+\caption{Resultados del recocido simulado.} 
+\label{f7}
+\end{figure}
+
+En la figura \ref{f7} se puede observar el valor del recocido a diferentes temperaturas a un valor de $\xi$ de 0.1, en donde se puede determinar que la temperatura no altera el resultado final, debido a que hay una diferencia despreciable como se muestra en las cajas bigote. 
+
+  \bibliography{P7}
+  \bibliographystyle{plainnat}
+\end{document}
