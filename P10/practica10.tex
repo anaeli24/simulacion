@@ -28,12 +28,11 @@ La pr\'actica \cite{elisa} consiste en variar el problema de la mochila ya menci
 
 \section{Metodolog\'{i}a}\label{met}
 
-Se realizo una modificaci\'on en el \'ultimo c\'odigo mostrado en clase \citep{elisa}, de tal manera de generar las $3$ instancias:
+Se realiz\o una modificaci\'on en el \'ultimo c\'odigo mostrado en clase \citep{elisa}, de tal manera de generar las $3$ instancias:
 Los pesos y los valores generados son independientes.
 Se generan los pesos y se correlacionan los valores.
 Se generan los pesos y se correlacionan de manera inversa los valores.
-Una vez generados los puntos mencionados, se prosigui\'o a cambiar la selecci\'on de padres a que fueran tipo ruleta, buscando que cada padre posea una probabilidad de ser elegido que ser\'ia directamente proporcional a su valor de funci\'on objetivo y su factibilidad.
-De tal manera de cumplir con el objetivo de la tarea determinando para cada uno de los tres casos a partir de qu\'e tama\~no de instancia el algoritmo gen\'etico es mejor que el algoritmo exacto en t\'erminos de valor total obtenido por segundo de ejecuci\'on y si la inclusi\'on de la selecci\'on de ruleta produce una mejora estad\'isticamente significativa \citep{elisadisc}.
+Una vez generados los puntos mencionados, se prosigui\'o a cambiar la selecci\'on de padres a que fueran tipo ruleta, buscando que cada padre posea una probabilidad de ser elegido que ser\'ia directamente proporcional a su valor de funci\'on objetivo y su factibilidad, de tal manera de cumplir con el objetivo de la tarea determinando para cada uno de los tres casos a partir de qu\'e tama\~no de instancia el algoritmo gen\'etico es mejor que el algoritmo exacto en t\'erminos de valor total obtenido por segundo de ejecuci\'on y si la inclusi\'on de la selecci\'on de ruleta produce una mejora estad\'isticamente significativa \citep{elisadisc}.
 
 
 \section{Resultados y Discusi\'{o}n}\label{res}
@@ -60,14 +59,14 @@ Tambi\'en fue modificado el c\'odigo \citep{ana} para evaluar la mejora con $3$ 
 \begin{itemize} \item El peso y el valor de cada objeto se generan independientemente con una distribuci\'on exponencial. \item El peso de cada objeto se generan independientemente con una distribuci\'on exponencial y su valor es (positivamente) correlacionado con el peso, con un ruido normalmente distribuido de baja magnitud. \item El peso de cada objeto se generan independientemente con una distribuci\'on exponencial y su valor es inversamente correlacionado con el peso, con un ruido normalmente distribuido de baja magnitud.
 \end{itemize}
 
-Esto se evalu\'o en diferentes valores en $n$, es decir en la cantidad de objetos, y los resultados se muestran en el cuadro \ref{t1} , donde podemos comparar el valor optimo del mejor valor generado para diferentes $n$, $20$, $40$, $80$, $100$ y $120$, esto para cada una de las instancias mencionadas.
+Esto se evalu\'o en diferentes valores en $n$, es decir en la cantidad de objetos, y los resultados se muestran en el cuadro \ref{t1} , donde podemos comparar el valor \'optimo del mejor valor generado para diferentes $n$, $20$, $40$, $80$, $100$ y $120$, esto para cada una de las instancias mencionadas.
 
 \begin{table} [H]
  \caption{Datos obtenidos con las 3 reglas a diferente n\'umero de objetos.}
  \label{t1}
  \begin{center}
  \begin{tabular}{rrrrrrr}
-\texttt{Objetos} & \texttt{Mayor Valor} & \texttt{Optimo} &\texttt{Instancia} \\
+\texttt{Objetos} & \texttt{Mayor Valor} & \texttt{\'Optimo} &\texttt{Instancia} \\
 20  & 1282.013322048552   & 1296.6201550491073  & 1  \\ 
 20  & 4787.9432414394905 & 4787.943241439491    & 2\\ 
 20  & 3604.9873301831326 & 3604.9873301831326  & 3  \\ 
@@ -88,7 +87,7 @@ Esto se evalu\'o en diferentes valores en $n$, es decir en la cantidad de objeto
 \end{center}
 \end{table}
 
-De manera grafica se observa en la figura \ref{f2} el comportamiento de las 3 diferentes instancias con $n=80$ 
+De manera gr\'afica se observa en la figura \ref{f2} el comportamiento de las 3 diferentes instancias con $n=80$ 
 
 \begin{figure}[H]
        \centering
@@ -111,7 +110,7 @@ De manera grafica se observa en la figura \ref{f2} el comportamiento de las 3 di
         \label{f2}
 \end{figure}
 
-De manera grafica se observa en la figura \ref{f3} el comportamiento de las 3 diferentes instancias con $n=20$ 
+De manera gr\'afica se observa en la figura \ref{f3} el comportamiento de las 3 diferentes instancias con $n=20$ 
 
 \begin{figure}[H]
        \centering
@@ -135,7 +134,7 @@ De manera grafica se observa en la figura \ref{f3} el comportamiento de las 3 di
 \end{figure}
 \section{Conclusi\'{o}n}\label{con}
 
-Se muestra el impacto causado por el efecto utilizando un m\'etodo de selecci\'on de padres diferente, en este caso tipo ruleta, en donde se observ\'o que el m\'etodo logra acercarse a la soluci\'on \'optima en menos generaciones, sin embargo, pierde valor al avanzar a generaciones futuras en donde es alcanzado por el m\'etodo aleatorio. Adicionalmente se observa en las $3$ instancias generadas, que la mejor instancia en donde nos acerc\'abamos mas al valor optimo fue en la $1$ tanto para cuando tenemos $20$ como cuando tenemos $80$ objetos.
+Se muestra el impacto causado por el efecto utilizando un m\'etodo de selecci\'on de padres diferente, en este caso tipo ruleta, en donde se observ\'o que el m\'etodo logra acercarse a la soluci\'on \'optima en menos generaciones, sin embargo, pierde valor al avanzar a generaciones futuras en donde es alcanzado por el m\'etodo aleatorio. Adicionalmente se observa en las $3$ instancias generadas, que la mejor instancia en donde nos acerc\'abamos m\'as al valor \'optimo fue en la $1$ tanto para cuando tenemos $20$ como cuando tenemos $80$ objetos.
 
   \bibliography{P10}
   \bibliographystyle{plainnat}
