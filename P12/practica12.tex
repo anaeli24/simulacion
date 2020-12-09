@@ -1,0 +1,71 @@
+\documentclass{article}
+
+\usepackage[spanish]{babel}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[T1]{fontenc}
+\usepackage[ansinew]{inputenc}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage[numbers,sort&compress]{natbib}
+
+\begin{document}
+\title{\textbf{Red Neuronal}}
+\author{Anahi Elizabeth Llano}
+
+\maketitle
+
+\section{Objetivo}\label{obj}
+
+El objetivo de la pr\'actica es \cite{elisa} estudiar de manera sistem\'atica el desempe\~no de la red neuronal en t\'erminos de su puntaje $F (F-score)$ para los diez d\'igitos en funci\'on de las tres probabilidades asignadas a la generaci\'on de los d\'igitos (negro, gris y blanco), variando a las tres en un experimento factorial.
+
+\section{Metodolog\'{i}a}\label{met}
+
+Se realiz\'o una modificaci\'on al \'ultimo c\'odigo mostrado en clase de tal manera de poder cumplir con el objetivo de la pr\'actica, se trabaj\'o con el programa $R.4.0.3$, primeramente buscar representar la matriz de confusi\'on en t\'erminos de $F-score$ \cite{elisadisc} es decir que se represente con un n\'umero, y posteriormente realizar la variaci\'on de las tres probabilidades de aparici\'on de cada color (negro, gris y blanco) con variaciones en el n\'umero de pruebas en $50, 100, 150, 200, 250$ para cada color, as\'i mismo se realiz\'o un diagrama de cajas y bigotes \cite{ana} para observar el comportamiento de los datos
+
+
+\section{Resultados y Discusi\'{o}n}\label{res}
+
+Se realizaron las variaciones de las probabilidades de cada color estas se representan en el cuadro \ref{t1} en donde se observan los valores dados para cada una de las variaciones, as\'i mismo se observa que cada combinaci\'on es representativa a los valores en las combinaciones que se observan en la figura \ref{f1}.
+De igual manera se realiz\'o una variaci\'on en el n\'umero de pruebas de tal manera que se pudiera observar si es que existen o no diferencias significativas en cada una de las posibles combinaciones que se le dio al programa.
+
+\begin{table} 
+ \caption{Probabilidades de generaci\'on de d\'igitos}
+ \label{t1}
+ \begin{center}
+ \begin{tabular}{|r|r|r|r|r|r|r|r|r|r|r|}
+\hline
+\texttt{Color} & \texttt{1} & \texttt{2} &\texttt{3} & \texttt{4}  & \texttt{5} &\texttt{6} & \texttt{7}  & \texttt{8} \\
+\hline
+Negro& 0.995 & 0.995 & 0.999 & 0.85 & 0.996 & 0.001 & 0.05 & 0.34  \\     
+\hline
+Gris & 0.92 & 0.082 & 0.99 & 0.94 & 0.007 & 0.76 & 0.05 & 0.89 \\ 
+\hline
+Blanco  & 0.002 & 0.0001 & 0.9 & 0.10 & 0.003 & 0.006 & 0.05 & 0.99 \\ 
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\begin{figure}[H]
+       \centering
+           \includegraphics[width=1.3\linewidth]{P12.png}
+           \caption{Valor $F$ contra el n\'umero de combinaciones.}
+           \label{f1}
+\end{figure}
+
+\section{Conclusi\'{o}n}\label{con}
+
+Se concluye que el valor en $F$ no depende directamente del n\'umero de pruebas que se realicen, m\'as bien este depende de la probabilidad de aparici\'on de los colores, esto considerando que no hubo una diferencia significativa con las variaciones que se ingresaron, aunque el valor en $F$ en la combinacion $1$, que es la combinacion estandar mostrada en clase, tubo valores menores en comparaci\'on con las demas combinaciones.
+
+
+
+  \bibliography{P12}
+  \bibliographystyle{plainnat}
+\end{document}
