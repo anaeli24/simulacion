@@ -41,7 +41,7 @@ def fuerza(i):
         dire = (-1)**(1 + (ci * cj < 0))
         dx = xi - pj.x
         dy = yi - pj.y
-        factor = dire * fabs(ci - cj) / (sqrt(dx**2 + dy**2) + eps)
+        ##factor = dire * fabs(ci - cj) / (sqrt(dx**2 + dy**2) + eps)
         fx -= dx * factor
         fy -= dy * factor
     return (fx, fy)
